@@ -1,4 +1,4 @@
-import diarioController from '../src/controller/diarioController'
+import diarioController from '../src/controller/diarioController.js'
 
 
 

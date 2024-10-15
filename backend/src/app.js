@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import 'dotenv/config';
 import express from 'express'
 import cors from 'cors'
 
@@ -11,4 +11,4 @@ servidor.use(express.json());
 
 adicionarRotas(servidor);
 
-servidor.listen(process.env.PORT, () => console.log(`--> API subiu na porta ${process.env.PORT}`));
+servidor.listen(process.env.PORTA, () => console.log(`--> API subiu na porta ${process.env.PORTA}`));
