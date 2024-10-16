@@ -1,4 +1,4 @@
-import * as db  from '../repository/diairoRepository.js';
+    import * as db  from '../repository/diairoRepository.js';
 
 import { Router } from 'express'
 import { autenticar } from '../utils/jwt.js';
