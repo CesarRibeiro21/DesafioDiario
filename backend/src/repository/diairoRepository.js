@@ -3,12 +3,12 @@ import con from "./connection.js";
 
 export async function inserirDiario(diaria){
     const comando = `
-    insert into tb_diaria(dt_dia,ds_conteudo,id_usuario)
+    insert into tb_diario(dt_dia,ds_conteudo,id_usuario)
     values
     (?,?,?);
     `;
 
-    let resposta = await con.query(comando [diaria.dia,diaria.conteudo,diaria.usuario_id]);
+    let resposta = await con.query(comando [diaria.dia,diaria.conteudo,diaria.usuario]);
     let info = resposta[0];
     return info.insertId;
 
