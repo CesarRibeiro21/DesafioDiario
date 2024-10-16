@@ -3,7 +3,7 @@ import con from "./connection.js";
 export async function inserirUsuario(pessoa) {
     const comando = `
         insert into tb_usuario (nm_usuario, ds_senha) 
-					        values (?, ?)
+		values (?, ?)
     `;
     
     let resposta = await con.query(comando, [pessoa.nome, pessoa.senha])

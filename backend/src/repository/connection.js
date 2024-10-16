@@ -8,13 +8,12 @@ dotenv.config();
 console.log('Conectando com as seguintes credenciais:');
 console.log(`Host: ${process.env.MYSQL_HOST}`);
 console.log(`User: ${process.env.MYSQL_USER}`);
-console.log(`Port: ${process.env.MYSQL_PORT}`);
+console.log(`Port: ${process.env.PORTA}`);
 console.log(`Database: ${process.env.MYSQL_DB}`);
 
 const con = await mysql.createConnection({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
-    port: process.env.MYSQL_PORT,
     password: process.env.MYSQL_PWD,
     database: process.env.MYSQL_DB,
     

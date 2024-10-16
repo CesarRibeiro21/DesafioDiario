@@ -30,7 +30,8 @@ export async function alterarDiario(id,diaria){
 }
 export async function deletarDiario(){
     const comando = `
-    
+    delete from tb_diario
+         where id_diario = ?
     `
 }
 
