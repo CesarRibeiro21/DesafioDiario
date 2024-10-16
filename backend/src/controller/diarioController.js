@@ -1,9 +1,10 @@
 import * as db  from '../repository/diairoRepository.js';
 
 import { Router } from 'express'
+import { autenticar } from '../utils/jwt.js';
 const endpoints = Router();
 
-endpoints.get('/diario/', async (req, resp) => {
+endpoints.get('/diario/',autenticar, async (req, resp) => {
     try{
         let registro= await db.consultarDiario();
         resp.send(registro);
@@ -15,10 +16,10 @@ endpoints.get('/diario/', async (req, resp) => {
     }
 })
 
-endpoints.post('/diario/add/', async (req, resp) => {
+endpoints.post('/diario/add/',autenticar, async (req, resp) => {
     try{
         let pessoa = req.body;
-        pessoa.idUsuario= req.user.id;
+        pessoa.idUsuario = req.user.id;
 
         let id = await db.inserirDiario(pessoa);
         
@@ -33,7 +34,7 @@ endpoints.post('/diario/add/', async (req, resp) => {
     }
 })
 
-endpoints.put('/alterar/diario/:id', async (req, resp) =>{
+endpoints.put('/alterar/diario/:id',autenticar, async (req, resp) =>{
     try{
         let id = req.params.id;
         let pessoa = req.body;
@@ -53,7 +54,7 @@ endpoints.put('/alterar/diario/:id', async (req, resp) =>{
     }
 })
 
-endpoints.delete('/deletar/listaNegra/:id', async (req, resp) => {
+endpoints.delete('/deletar/listaNegra/:id',autenticar, async (req, resp) => {
     try {
         let id = req.params.id;
 
